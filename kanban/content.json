@@ -1,0 +1,22 @@
+[
+  {
+   "taskName":"merge",
+   "estimatedStartTime":"20140422",
+   "estimatedFinishTime":"20140425",
+   "startTime":"20140423",
+   "finishTime":"20140425",
+   "fileName":"abcfile",
+   "filePath":"directryName",
+   "status":0
+  },
+  {
+   "taskName":"merge2",
+   "estimatedStartTime":"20140423",
+   "estimatedFinishTime":"20140426",
+   "startTime":"20140424",
+   "finishTime":"20140426",
+   "fileName":"abcfile2",
+   "filePath":"directryName2",
+   "status":1
+  }
+]

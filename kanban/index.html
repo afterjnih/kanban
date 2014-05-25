@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>看板</title>
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/display.js"></script>
+<link type ="text/css" href = "jquery-ui.css" rel="Stylesheet" />
+
+
+</head>
+
+<body onLoad="initialize()">
+
+<div id="dialog-form" title="Create Kanban">
+  <form>
+  <fieldset>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all">
+    <label for="email">タスク名</label>
+    <input type="text" name="taskName" id="taskName" value="" class="text ui-widget-content ui-corner-all">
+    <label for="email">開始予定日</label>
+    <input type="text" name="estimatedStartTime" id="estimatedStartTime" value="" class="text ui-widget-content ui-corner-all">
+
+
+  </fieldset>
+  </form>
+</div>
+
+<button id="create-user">Create new user</button>
+
+
+
+<div id="dialog" title="コメントの投稿ありがとうございます">
+<p>コメントを受け付けました。<br />コメントは管理人の承認後、表示されます。</p>
+</div>
+
+
+</script>
+
+
+<form action="./register.rb" method="post">
+
+<input name="a" value="">
+<input name="b" value="">
+<input name="c" value="">
+<input name="d" value="">
+
+<input type="submit" name="s" value="Button">
+
+</form>
+
+<div id="area" style="width: 500px; height: 200px; border: 4px dashed gray; position: relative;"
+ ondragover="DragOver(event)" ondrop="Drop(event)">
+<p style="position: absolute; top: 50%; padding-left: 80px;">ここにファイルをドラッグ＆ドロップしてください。</p>
+
+
+<div id="KANBAN">
+ここに情報が追加されていきます。<br>
+</div>
+
+</div>
+
+</body>
+
+</html>
