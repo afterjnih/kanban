@@ -4,4 +4,3 @@ require "cgi"
 
 request_param = Hash.new
 
-query = ENV['
