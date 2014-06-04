@@ -1,6 +1,14 @@
 $(function(){
   var name = $("#name");
   var email = $("#email");
+  var taskName = $("#taskName");
+  var estimatedStartTime = $("#estimatedStartTime");
+  var estimatedFinishTime = $("#estimatedFinishTime");
+  var startTime = $("#startTime");
+  var finishTime = $("#finishTime");
+  var fileName =$("#fileName");
+  var filePath = $("#filePath");
+  var status = $("#status");
   nameKoji = "koji";
   emailKoji = "kojimail";
   $("#dialog-form").dialog({
@@ -11,13 +19,25 @@ $(function(){
     buttons:{
       "OK":function(){
 // //       name.val()
-        var data = {request : "kojikojo"};
+//        var data = {request : "kojikojo"};
+//    	var data = {request : name.text()};
+
         $.ajax({
          type:"POST",
          url:"http://localhost:8080/register3.rb",
          dataType:'text',
          cache: false,
-         data:{request : name.val()},
+//         data:{request : name.val()},
+         data:{name : name.val(),
+			   email : email.val(),
+			   taskName : taskName.val(),
+			   estimatedStartTime : estimatedStartTime.val(),
+			   estimatedFinishTime : estimatedFinishTime.val(),
+			   startTime : startTime.val(),
+			   finishTime : finishTime.val(),
+			   fileName : fileName.val(),
+			   filePath : filePath.val(),
+			   status : status.val()},
          //data:"kojiajax",
          //data: data,
           success:function(dataTmp){
@@ -29,9 +49,9 @@ $(function(){
 //   }
 //   });
 //         //var PARENT = document.getElementById("KANBAN");
-//         //PARENT.appendChild(kanbanArray[i].taskName);        
-//       
-//        
+//         //PARENT.appendChild(kanbanArray[i].taskName);
+//
+//
         });
 //        $(this).dialog("close");
       },
@@ -42,7 +62,7 @@ $(function(){
 ////  buttons:[{text:"OK",click: function() {$(this).dialog("close");}
 ////    }]
     });
-    
+
     $("#create-user")
     .button()
     .click(function(){
@@ -71,10 +91,10 @@ function initialize(){
        window.alert(tmp[1].taskName);
        window.alert(tmp[1].estimatedStartTime);
        window.alert(tmp[1].estimatedFinishTime);
-       
+
        var kanbanArray = [];
        var propertyArray = [];
-       
+
        var Member = function(){
          this.taskName = document.createElement("p");
          this.estimatedStartTime = document.createElement("p");
@@ -84,7 +104,7 @@ function initialize(){
          this.fileName = document.createElement("p");
          this.filePath = document.createElement("p");
          this.status = document.createElement("p");
-         
+
          this.setInnerHtml = function(taskName,estimatedStartTime,estimatedFinishTime,startTime,finishTime,fileName,filePath,status){
            this.taskName.innerHTML = taskName;
            this.estimatedStartTime.innerHTML = estimatedStartTime;
@@ -132,11 +152,11 @@ function filesSelected(files) {
 //}
       $("#dialog-form").dialog("open");
 }
- 
+
 function DragOver(e) {
 e.preventDefault();
 }
- 
+
 function Drop(e) {
 e.preventDefault();
 filesSelected(e.dataTransfer.files);
