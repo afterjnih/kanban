@@ -26,8 +26,8 @@ if ENV['REQUEST_METHOD'] == "POST" then
 	query = STDIN.read(ENV['CONTENT_LENGTH'].to_i)
 
 	p c
-	p text01
-	p text02
+	print text01
+	print text02
   p text03
   p text04
   p text05
@@ -37,8 +37,8 @@ if ENV['REQUEST_METHOD'] == "POST" then
   p text09
   p text10
 
-	p "ruby"
-    print "rubyExe"
+	p "あああ"
+    print "rubyエグゼ"
 
 
 end
