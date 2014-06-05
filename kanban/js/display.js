@@ -150,7 +150,18 @@ function filesSelected(files) {
 //  xhr.send(EncodeHTMLForm( data ));
 //  window.alert("jij");
 //}
-      $("#dialog-form").dialog("open");
+  $("#name").val("おおお");
+  $("#email").val("おおお");
+  $("#taskName").val("おおお");
+  $("#estimatedStartTime").val("おおお");
+  $("#estimatedFinishTime").val("おおお");
+  $("#startTime").val("おおお");
+  $("#finishTime").val("おおお");
+  $("#fileName").val(files[0].name);
+  $("#filePath").val("おおお");
+  $("#status").val("おおお");
+
+  $("#dialog-form").dialog("open");
 }
 
 function DragOver(e) {
