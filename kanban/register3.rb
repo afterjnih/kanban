@@ -22,6 +22,10 @@ text10 = c["status"]
 
 if ENV['REQUEST_METHOD'] == "POST" then
 
+f = open("C:/Users/Koji/Dropbox/kanban/content.dat","a")
+f.write(text08)
+f.close
+
 	# 標準入力からパラメータを取得する
 	query = STDIN.read(ENV['CONTENT_LENGTH'].to_i)
 
