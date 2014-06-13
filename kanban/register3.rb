@@ -40,7 +40,8 @@ if ENV['REQUEST_METHOD'] == "POST" then
 
 
 f = open("C:/Users/Koji/Dropbox/kanban/content.dat","a")
-f.write(json_data)
+f.puts(json_data)
+
 f.close
 
 	# 標準入力からパラメータを取得する
