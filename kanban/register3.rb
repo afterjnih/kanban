@@ -1,6 +1,7 @@
 #!/usr/local/bin/ruby
 
 require "cgi"
+require "json"
 
 print "Content-Type: application/x-www-form-urlencoded\n"
 
@@ -22,8 +23,24 @@ text10 = c["status"]
 
 if ENV['REQUEST_METHOD'] == "POST" then
 
+
+  json_data = {
+    :taskName => text03,
+    :estimatedStartTime => text04,
+    :estimatedFinishTime => text05,
+    :startTime => text06,
+    :finishTime => text07,
+    :fileName => text08,
+    :filePath => text09,
+    :status => text10
+  }
+
+  json_str = JSON.generate(json_data)
+
+
+
 f = open("C:/Users/Koji/Dropbox/kanban/content.dat","a")
-f.write(text08)
+f.write(json_data)
 f.close
 
 	# 標準入力からパラメータを取得する
@@ -32,14 +49,14 @@ f.close
 	p c
 	print text01
 	print text02
-  p text03
-  p text04
-  p text05
-  p text06
-  p text07
-  p text08
-  p text09
-  p text10
+  print text03
+  print text04
+  print text05
+  print text06
+  print text07
+  print text08
+  print text09
+  print text10
 
 	p "あああ"
     print "rubyエグゼ"
