@@ -36,12 +36,13 @@ if ENV['REQUEST_METHOD'] == "POST" then
   }
 
   json_str = JSON.generate(json_data)
-
+  #下の変換ではjsonデータに変換されない
+  json_data.to_json
 
 
 f = open("C:/Users/Koji/Dropbox/kanban/content.dat","a")
-f.puts(json_data)
-
+f.puts(json_str)
+#f.puts(json_data)
 f.close
 
 	# 標準入力からパラメータを取得する
