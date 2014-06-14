@@ -11,6 +11,11 @@ $(function(){
   var status = $("#status");
   nameKoji = "koji";
   emailKoji = "kojimail";
+  $("#estimatedStartTime").datepicker();
+  $("#estimatedFinishTime").datepicker();
+  $("#startTime").datepicker();
+  $("#finishTime").datepicker();
+  
   $("#dialog-form").dialog({
     autoOpen:false,
     height:"auto",
