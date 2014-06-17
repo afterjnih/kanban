@@ -40,7 +40,7 @@ if ENV['REQUEST_METHOD'] == "POST" then
   json_data.to_json
 
 
-f = open("C:/Users/Koji/Dropbox/kanban/content.dat","a")
+f = open("http://localhost:8080/content.dat","a")
 f.puts(json_str)
 #f.puts(json_data)
 f.close
