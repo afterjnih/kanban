@@ -78,8 +78,7 @@ $(function(){
       $("#dialog-form").dialog("open");
 
     });
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
+
   });
 ////$(function(){
 ////  $("#dialog").dialog();
@@ -90,7 +89,7 @@ var data = { "foo":'abc', "bar":100 };
 
 function initialize(){
 //  window.alert("aaa");
-  var url = "http://localhost:8080/content.json"
+  var url = "http://localhost:8080/content.json";
   var xhr = new XMLHttpRequest();
   xhr.open('GET',url,true);
   xhr.onreadystatechange = function(){
@@ -98,7 +97,7 @@ function initialize(){
        var result = xhr.responseText;
        window.alert("一回目");
        window.alert(result);
-       var tmp = eval("(" +result+ ")")
+       var tmp = eval("(" +result+ ")");
        window.alert(tmp[1].taskName);
        window.alert(tmp[1].estimatedStartTime);
        window.alert(tmp[1].estimatedFinishTime);
