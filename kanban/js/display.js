@@ -15,7 +15,7 @@ $(function(){
   $("#estimatedFinishTime").datepicker();
   $("#startTime").datepicker();
   $("#finishTime").datepicker();
-  
+
   $("#dialog-form").dialog({
     autoOpen:false,
     height:"auto",
@@ -58,7 +58,8 @@ $(function(){
 //
 //
         });
-//        $(this).dialog("close");
+
+        $(this).dialog("close");
       },
       "Cancel":function(){
         $(this).dialog("close");
