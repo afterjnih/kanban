@@ -1,4 +1,5 @@
 $(function(){
+
   var name = $("#name");
   var email = $("#email");
   var taskName = $("#taskName");
@@ -67,6 +68,8 @@ $(function(){
     }
 ////  buttons:[{text:"OK",click: function() {$(this).dialog("close");}
 ////    }]
+
+
     });
 
     $("#create-user")
@@ -75,6 +78,8 @@ $(function(){
       $("#dialog-form").dialog("open");
 
     });
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
   });
 ////$(function(){
 ////  $("#dialog").dialog();
