@@ -101,6 +101,7 @@ function initialize(){
        window.alert("一回目");
        window.alert(result);
        var tmp = eval("(" +result+ ")");
+       window.alert(tmp.length + "要素");
        window.alert(tmp[1].taskName);
        window.alert(tmp[1].estimatedStartTime);
        window.alert(tmp[1].estimatedFinishTime);
@@ -142,9 +143,19 @@ function initialize(){
          PARENT.appendChild(kanbanArray[i].filePath);
          PARENT.appendChild(kanbanArray[i].status);
       }
-       
-       var domdom = new DomController('abcabc');
-       domdom.setDom().appendTo('#KANBAN');
+       window.alert(tmp.length + "要素");
+       for(var i in tmp){
+           var domdom = new DomController(tmp[i].taskName);
+           domdom.setDom().appendTo('#KANBAN');    	   
+       }
+       var domSam = new DomController(result);
+       var domSamArray = domSam.createDoms();
+       alert(domSamArray.length);
+       for (var i in domSamArray){
+    	   alert("finish3");
+    	   domSamArray[i].appendTo('#sortable');
+       }
+       alert("finish");	
     }
   };
   xhr.setRequestHeader("Content-Type","text/plain");
