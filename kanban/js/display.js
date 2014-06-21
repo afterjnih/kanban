@@ -1,3 +1,5 @@
+document.write("<script type='text/javascript' src='js/createdom.js'><\/script>");
+
 $(function(){
 
   var name = $("#name");
@@ -49,6 +51,7 @@ $(function(){
           success:function(dataTmp){
             window.alert(dataTmp);
             $('<div></div>').text(dataTmp).appendTo('#KANBAN');
+            
           }
 //          );
 //     }
@@ -139,6 +142,9 @@ function initialize(){
          PARENT.appendChild(kanbanArray[i].filePath);
          PARENT.appendChild(kanbanArray[i].status);
       }
+       
+       var domdom = new DomController('abcabc');
+       domdom.setDom().appendTo('#KANBAN');
     }
   };
   xhr.setRequestHeader("Content-Type","text/plain");
