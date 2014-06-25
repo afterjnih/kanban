@@ -40,16 +40,11 @@ if ENV['REQUEST_METHOD'] == "POST" then
   json_data.to_json
 
 open("content.dat","r+") do |f|
+  content = f.read
+  content[-2,2]=",\n"
+  content.concat(json_str + "\n]")
   f.rewind
-  f.each_line do |line|
-    if line == "]"
-      f.puts(",")
-      f.puts(json_str)
-      f.puts("]")
-    else
-      print line
-    end
-  end
+  f.write(content)
 end
 
 #f = open("content.dat","a")
