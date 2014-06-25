@@ -39,13 +39,25 @@ if ENV['REQUEST_METHOD'] == "POST" then
   #下の変換ではjsonデータに変換されない
   json_data.to_json
 
+open("content.dat","r+") do |f|
+  f.rewind
+  f.each_line do |line|
+    if line == "]"
+      f.puts(",")
+      f.puts(json_str)
+      f.puts("]")
+    else
+      print line
+    end
+  end
+end
 
-f = open("content.dat","a")
-#f = open("C:/Users/Koji/Dropbox/kanban/content.dat","a")
-
-f.puts(json_str)
-#f.puts(json_data)
-f.close
+#f = open("content.dat","a")
+##f = open("C:/Users/Koji/Dropbox/kanban/content.dat","a")
+#
+#f.puts(json_str)
+##f.puts(json_data)
+#f.close
 
 	# 標準入力からパラメータを取得する
 	query = STDIN.read(ENV['CONTENT_LENGTH'].to_i)
