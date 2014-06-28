@@ -1,5 +1,7 @@
 #!/usr/local/bin/ruby
 
+
+
 require "cgi"
 require "json"
 
@@ -39,9 +41,12 @@ if ENV['REQUEST_METHOD'] == "POST" then
   #下の変換ではjsonデータに変換されない
   json_data.to_json
 
-open("content.dat","r+") do |f|
+#open("content.dat","r+") do |f|
+open("content.dat","r+:utf-8") do |f|
   content = f.read
   content[-2,2]=",\n"
+  p content.encoding
+  p json_str.encoding
   content.concat(json_str + "\n]")
   f.rewind
   f.write(content)
