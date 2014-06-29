@@ -51,7 +51,7 @@ $(function(){
           success:function(dataTmp){
             window.alert(dataTmp);
             $('<div></div>').text(dataTmp).appendTo('#KANBAN');
-            
+
           }
 //          );
 //     }
@@ -92,7 +92,9 @@ var data = { "foo":'abc', "bar":100 };
 
 function initialize(){
 //  window.alert("aaa");
-  var url = "http://localhost:8080/content.json";
+//  var url = "http://localhost:8080/content.json";
+  var url = "http://localhost:8080/content.dat";
+//  var url = "http://localhost:8080/content2.json";
   var xhr = new XMLHttpRequest();
   xhr.open('GET',url,true);
   xhr.onreadystatechange = function(){
@@ -130,8 +132,10 @@ function initialize(){
            this.status.innerHTML = status;
          }
        };
+
        for (i=0; i<tmp.length; i = i+1){
-         kanbanArray.push(new Member());
+    	   alert(tmp.length+"STOP");
+    	 kanbanArray.push(new Member());
          kanbanArray[i].setInnerHtml(tmp[i].taskName,tmp[i].estimatedStartTime,tmp[i].estimatedFinishTime,tmp[i].startTime,tmp[i].finishTime,tmp[i].fileName,tmp[i].filePath,tmp[i].status);
          var PARENT = document.getElementById("KANBAN");
          PARENT.appendChild(kanbanArray[i].taskName);
@@ -143,10 +147,11 @@ function initialize(){
          PARENT.appendChild(kanbanArray[i].filePath);
          PARENT.appendChild(kanbanArray[i].status);
       }
+
        window.alert(tmp.length + "要素");
        for(var i in tmp){
            var domdom = new DomController(tmp[i].taskName);
-           domdom.setDom().appendTo('#KANBAN');    	   
+           domdom.setDom().appendTo('#KANBAN');
        }
        var domSam = new DomController(result);
        var domSamArray = domSam.createDoms();
@@ -155,7 +160,7 @@ function initialize(){
     	   alert("finish3");
     	   domSamArray[i].appendTo('#sortable');
        }
-       alert("finish");	
+       alert("finish");
     }
   };
   xhr.setRequestHeader("Content-Type","text/plain");
